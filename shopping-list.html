@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div ng-app="myShoppingList" ng-controller="myCtrl" class="container">
+    <div class="row" id="content-wrapper">
+      <div class="col-md-12">
+        <h3 id="content-title"><i class="glyphicon glyphicon-shopping-cart"></i> My shopping list</h3>
+        <hr>
+        <ul>
+          <li ng-repeat="x in products">{{x}}<span ng-click="removeItem($index)"> <i class="deleteIcon glyphicon glyphicon-remove"></i></span></li>
+        </ul>
+        <form>
+          <input ng-model="addMe" class="form-control" placeholder="New item">
+          <button ng-click="addItem()" class="btn" type="submit">Add</button>
+        </form>
+        <p>{{errortext}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
